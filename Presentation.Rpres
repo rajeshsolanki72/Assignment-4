@@ -1,0 +1,50 @@
+Course Project: Shiny Application and Reproducible Pitch
+========================================================
+author: Rajesh Solanki
+date: Oct-15,2018
+autosize: true
+transition: rotate
+transition-speed: slow
+
+Overview
+========================================================
+
+This presentation contains documentation for pedicting salary in IT industry for prospective new hire based on their work experience.
+The application can be found [**here**] (https://rajesh-solanki.shinyapps.io/Assignment-4/)
+
+This application it is building linear regression model using `dataset` data set and is predicting the expected salery offer for new hire.The application allows the user to select:
+- Work Experience
+- to plot the linear model line
+
+- Build a plot gives predicted salary value.
+
+
+Slide with Complete Reporting Appliaction
+=======================================================
+Click the Below Link for the Application.
+
+https://rajesh-solanki.shinyapps.io/Assignment-4/
+
+Click the link below for compiled project files on gitub repo.
+
+https://github.com/rajeshsolanki72/Assignment-4
+
+Slide With Code - Data Used
+========================================================
+
+```{r}
+dataset = read.csv('Salary_Data.csv')
+summary(dataset)
+```
+
+Slide With Plot
+========================================================
+
+```{r, echo=FALSE}
+model1 <- lm(Salary ~ YearsExperience, data = dataset)
+plot(dataset$YearsExperience, dataset$Salary, xlab = "Years of Work Experience", 
+         ylab = "Salary", bty = "n", pch = 19,
+         xlim = c(0, 20), ylim = c(0, 220000))
+abline(model1, col = "blue", lwd = 2)
+
+```
